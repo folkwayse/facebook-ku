@@ -1,0 +1,18 @@
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://admin:hartaku01@cluster0.ppbrz.mongodb.net/datashopee?retryWrites=true&w=majority"
+}
+
+model Shop {
+  id     String  @id @default(cuid()) @map("_id")
+  shopid  String
+  itemid  String  @unique
+  images  String[]
+  caption String
+}
+
+
+
+generator client {
+  provider = "prisma-client-js"
+}
